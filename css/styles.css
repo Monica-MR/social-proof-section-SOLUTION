@@ -1,0 +1,194 @@
+:root{
+    --fuentePrincipal: 'Spartan', sans-serif;
+    --moradoOscuro: hsl(300, 43%, 22%);
+    --rosaClaro: hsl(333, 80%, 67%);
+    --MoradoGris: hsl(303, 10%, 53%); 
+    --MoradoGrisClaro: hsl(300, 24%, 96%);
+    --blanco: hsl(0, 0%, 100%);
+    --fontSize: 15px;
+    --weight1: 400;
+    --weight2: 500;
+    --weight3: 700;
+}
+html{
+    box-sizing: border-box;
+}
+*,
+*:after,
+*:before{
+    box-sizing: inherit;
+}
+html::before{
+    position: absolute;
+    content: url('../images/bg-pattern-top-mobile.svg');
+}
+@media (min-width:768px){
+    html::before{
+        position: absolute;
+        content: url('../images/bg-pattern-top-desktop.svg');
+    }
+}
+body{
+    font-family: var(--fuentePrincipal);
+    height: 100vh;
+}
+h1{
+    font-size: 2.8rem;
+    color: var(--moradoOscuro);
+    margin-bottom: 1.5rem;
+}
+h2{
+    font-size: 1rem;
+    margin:0;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+.container{
+    max-width: 90%;
+    width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+}
+/*TITULO y SUBTITULO*/
+.flex-container{
+    padding-top: 3rem;
+    text-align: center;
+}
+.title__subtitle{
+    text-align: center;
+    line-height: 1.7;
+    color: var(--MoradoGris);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+@media screen and (min-width:768px){
+    .flex-container{
+        display: flex;
+        text-align: left;
+    }
+    .title{
+        flex: 0 0 38% ;
+    }
+    .title__subtitle{
+        text-align: left;
+        font-size: .9rem;
+        line-height: 1.3rem;
+    }
+    .title h1{
+        margin-bottom: 0;
+    }
+}
+/*CARD ESTRELLAS*/
+.reviews{
+    margin-top: 3rem;
+    flex: 0 0 65%;
+}
+.review-card{
+    color: var(--moradoOscuro);
+    background-color: var(--MoradoGrisClaro);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.review-card__stars img{
+    margin-left: .3rem;
+    margin-bottom: 1rem;
+}
+@media (min-width:1440px){
+    .review-card{
+        flex-direction: row;
+        padding: 1rem;
+        width: 62%;
+    }
+    .review-card__stars img{
+        margin-bottom: 0;
+    }
+    .review-card__stars img:last-of-type{
+        margin-right: 1rem;
+    }
+    .reviews{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .review-card:first-child{
+        align-self: flex-start;
+        margin-left: 10rem;
+    }
+    .review-card:nth-child(2){
+        align-self: center;
+        margin-left: 10rem;
+    }
+    .review-card:last-child{
+        align-self: flex-end;
+    }
+}
+/*RECOMENDATIONS*/
+.recomendations{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recomendation-card{
+    background-color: var(--moradoOscuro);
+    border-radius: 10px;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+    height: max-content;
+    max-width: 400px;
+}
+.recomendation-card:first-child{
+    margin-top: 3rem;
+}
+.recomendation-card p{
+    color: var(--blanco);
+    line-height: 1.5;
+    margin-left: .7rem;
+    padding-bottom: 2rem ;
+}
+.recomendation-card__info{
+    padding-top: 2rem;
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+}
+.recomendation-card__info span{
+    color: var(--rosaClaro);
+    font-weight: 400;
+    display: block;
+    padding-top: .5rem;  
+}
+.recomendation-card__info img{
+    border-radius: 50%; 
+    margin-left:1rem ;  
+    width: 50px;
+    height: 50px;
+}
+.recomendation-card__info h2{
+    padding-left: 1.5rem;
+}
+@media (min-width:768px){
+    .recomendation-card{
+        flex: 1;
+        margin-right: 1rem;
+    }
+    .recomendations{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: unset;
+    }
+    .recomendation-card:first-child{
+        margin-top: 2rem;
+    }
+    .recomendation-card:nth-child(2){
+        margin-top: 3rem;
+    }
+    .recomendation-card:nth-child(3){
+        margin-top: 4rem;
+        margin-right: 0;
+    }
+}
